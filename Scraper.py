@@ -24,15 +24,6 @@ def check():
         return(True)
 
 
-# In[ ]:
-
-
-
-
-
-# In[105]:
-
-
 if check() == True:
     conn = smtplib.SMTP('smtp.gmail.com', 587)
     conn.ehlo() # call this to start the connection
