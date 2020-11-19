@@ -11,9 +11,16 @@ soup = bs4.BeautifulSoup(getPage.text,'html.parser') #toto vrati linky
 zoznam = soup.findAll('div',attrs={'class':'journal-content-article'});
 
 zoznam2 = ' '.join(map(str, zoznam)) #skonvertovanie na list
+print("idem tlacit")
+print(zoznam2)
 def check():
     if ('Nemecko') in zoznam2:
         return(True)
+    else:
+        return(False)
+
+print(check())
+
 
 if check() == False:
     conn = smtplib.SMTP('smtp.gmail.com', 587)
@@ -22,7 +29,7 @@ if check() == False:
     conn.login('libor.riska@gmail.com', 'lfgmhcbwgraoqzdx')
     conn.sendmail('libor.riska@gmail.com', 'libor.riska@gmail.com', 'Subject:Slovensko NEPOVAZUJE Nemecko za bezpecnu krajinu')
     conn.quit()
-    
+
 
 
 
